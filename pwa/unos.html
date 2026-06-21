@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unos vijesti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a class="logo" href="index.php">
+            <span>RP</span> Online
+        </a>
+
+        <nav class="main-nav" aria-label="Glavna navigacija">
+            <a href="index.php">Home</a>
+            <a href="kategorija.php?id=Sport">Sport</a>
+            <a href="kategorija.php?id=Politik">Politik</a>
+            <a href="administrator.php">Administracija</a>
+            <a class="active" href="unos.php">Unos vijesti</a>
+        </nav>
+    </div>
+</header>
+
+<main class="page-shell">
+
+<section class="news-section">
+    <h1>Unos nove vijesti</h1>
+
+    <form class="news-form" name="unos-vijesti" action="unos.php" method="POST" enctype="multipart/form-data" autocomplete="on">
+        <div class="form-item">
+            <label for="title">Naslov vijesti</label><br>
+            <input class="form-field-textual" type="text" name="title" id="title" required autofocus>
+        </div>
+
+        <div class="form-item">
+            <label for="about">Kratki sažetak</label><br>
+            <textarea class="form-field-textual" name="about" id="about" rows="5" maxlength="180" required></textarea>
+        </div>
+
+        <div class="form-item">
+            <label for="content">Sadržaj vijesti</label><br>
+            <textarea class="form-field-textual" name="content" id="content" rows="10" required></textarea>
+        </div>
+
+        <div class="form-item">
+            <label for="category">Kategorija</label><br>
+            <select class="form-field-textual" name="category" id="category" required>
+                <option value="Sport">Sport</option>
+                <option value="Politik">Politik</option>
+            </select>
+        </div>
+
+        <div class="form-item">
+            <label for="pphoto">Odabir slike</label><br>
+            <input class="input-text" type="file" name="pphoto" id="pphoto" accept="image/jpeg,image/png,image/gif,image/webp" required>
+        </div>
+
+        <div class="form-item checkbox-item">
+            <input type="checkbox" name="archive" id="archive" value="1" checked>
+            <label for="archive">Spremiti u arhivu</label>
+        </div>
+
+        <div class="form-actions">
+            <button type="reset">Poništi</button>
+            <button type="submit">Pošalji</button>
+        </div>
+
+    </form>
+
+</section>
+
+</main>
+
+<footer class="site-footer">
+    <p>&copy; RP Digital GmbH | Lana Mišić | 2026</p>
+    <small>Content Management by InterRed</small>
+</footer>
+
+</body>
+</html>
